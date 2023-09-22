@@ -72,3 +72,20 @@ SELECT
      END) AS avg_energy
 FROM
     spotify ) as energy_categories where avg_energy =  'Average Tempo';
+
+ #----------------------Analyse Artist popularity---------------------
+    
+     select min(artist_popularity) , max(artist_popularity), AVG(artist_popularity) from spotify;
+
+    select artist_popularity,
+    (
+    CASE
+        WHEN artist_popularity between 25 AND 50 THEN "LESS POPULAR"
+	    WHEN artist_popularity between 51 AND 75 THEN "AVERAGE POPULAR"
+        WHEN artist_popularity between 76 AND 90 THEN "ABOVE AVERAGE POPULAR"
+        WHEN artist_popularity  >90 THEN  "POPULAR"
+           END)
+    AS artist_pop from spotify order by artist_pop desc;
+
+
+select NTILE(6) OVER (PARTITION BY artist_popularity ) AS bucket from spotify;
