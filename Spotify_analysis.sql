@@ -81,7 +81,7 @@ FROM
     (
     CASE
         WHEN artist_popularity between 25 AND 50 THEN "LESS POPULAR"
-	    WHEN artist_popularity between 51 AND 75 THEN "AVERAGE POPULAR"
+	WHEN artist_popularity between 51 AND 75 THEN "AVERAGE POPULAR"
         WHEN artist_popularity between 76 AND 90 THEN "ABOVE AVERAGE POPULAR"
         WHEN artist_popularity  >90 THEN  "POPULAR"
            END)
