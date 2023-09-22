@@ -16,12 +16,9 @@ I will be creating an exploratory analysis by creating data visualizations and c
 
 Track Metadata
 
-column	description
-track_name	Song title
-artist_name	Song artist
-artist_genre	Song genre category
-year	Song Billboard chart entry year
-Audio Numerical Quantitive Data
+
+![image](https://github.com/nitin35byte/Spotify-Data-Analysis/assets/57886482/cb8b0cc1-b31d-4149-aa01-8f9f67296e02)
+
 
 column	description
 loudness	Loudness - How loud a song is (db)
