@@ -23,6 +23,8 @@ I will be creating an exploratory analysis by creating data visualizations and c
 
 
 **Audio Numerical Quantitive Data**
+
+
 ![image](https://github.com/nitin35byte/Spotify-Data-Analysis/assets/57886482/96871095-5f21-4197-a46a-245327e7073c)
 
 **Audio Qualitative Data**
@@ -31,6 +33,7 @@ I will be creating an exploratory analysis by creating data visualizations and c
 
 
 **Tech Stack**
+
 Excel (Data Cleaning)
 SQL (Exploratory Data Analysis, Case, Subqueries)
 Summary of Analysis
@@ -46,6 +49,8 @@ Analysis based on Acousticness
 To view the analysis Click Here
 
 **Conclusion**
+
+
 In conclusion, this analysis demonstrates the dynamic and evolving nature of musical preferences on Spotify from 2010 to 2022. While there are general trends that suggest what makes a song popular, there are always exceptions and outliers that capture the hearts of listeners. This dataset serves as a testament to the ever-changing landscape of music, driven by innovation, creativity, and the evolving tastes of music enthusiasts.
 
 Understanding these trends can be invaluable for artists, record labels, and music producers looking to create music that resonates with a broad audience on streaming platforms like Spotify. Additionally, this analysis provides music enthusiasts with a glimpse into the fascinating world of data-driven music exploration, where numbers and statistics harmonize with melodies and lyrics to create a richer listening experience.
