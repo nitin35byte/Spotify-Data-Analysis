@@ -3,7 +3,11 @@
 
 About Exploratory Data Analysis on "Top Songs of Spotify" between 2010-2022. This report explores on different data relations which can be formed from the given dataset.
 
-Introduction
+Introduction![68747470733a2f2f6c6f676f736d61726361732e6e65742f77702d636f6e74656e742f75706c6f6164732f323032302f30392f53706f746966792d456d626c656d612e706e67](https://github.com/nitin35byte/Spotify-Data-Analysis/assets/57886482/87d62ea0-a272-4495-bb00-a7ca5338f85e)
+
+
+![image](https://github.com/nitin35byte/Spotify-Data-Analysis/assets/57886482/30f5a46b-69de-4765-a320-f5d3649df61f)
+
 
 Spotify is a digital music streaming service that provides users access to over 82 million songs, podcasts and audio books. The app was developed by Daniel Ek and Martin Lorenzton in 2006. This app has become a family name over the years and boasts over 457 million subscribers as of 2022, rivaling SoundCloud and Apple Music.
 
