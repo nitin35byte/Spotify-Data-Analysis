@@ -1,29 +1,22 @@
+import openpyxl
 
+def getRowCount(file,sheetName):
+    workbook = openpyxl.load_workbook(file)
+    sheet = workbook[sheetName]
+    return(sheet.max_row)
 
-import configparser
+def getColumnCount(file,sheetName):
+    workbook = openpyxl.load_workbook(file)
+    sheet = workbook[sheetName]
+    return(sheet.max_column)
 
+def readData(file,sheetName,rownum,columnno):
+    workbook = openpyxl.load_workbook(file)
+    sheet = workbook[sheetName]
+    return sheet.cell(row=rownum, column=columnno).value
 
-
-config=configparser.RawConfigParser()
-config.read(r"C:\Automation_scripts\nopcommerceApp\Configurations\config.ini")
-
-class ReadConfig:
-    @staticmethod
-    def getApplicationURL():
-        url=config.get('common info','baseURL')
-        return url
-
-    @staticmethod
-    def getusername():
-        username=config.get('common info','username')
-        return username
-
-    @staticmethod
-    def getpassword():
-        password=config.get('common info','password')
-        return password
-
-    @classmethod
-    def getUseremail(cls):
-        pass
-
+def writeData(file,sheetName,rownum,columnno,data):
+    workbook = openpyxl.load_workbook(file)
+    sheet = workbook[sheetName]
+    sheet.cell(row=rownum, column=columnno).value = data
+    workbook.save(file)
