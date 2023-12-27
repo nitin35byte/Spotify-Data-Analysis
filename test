@@ -1,47 +1,33 @@
-import time
-import pytest
-from pageObject.LoginPage import LoginPage
-from pageObject.AddcustomerPage import AddCustomer
-from pageObject.SearchCustomerPage import SearchCustomer
-from utilities.readproperties import ReadConfig
-from utilities.customLogger import LogGen
+import logging
 
-class Test_SearchCustomerByName_005:
-    baseURL = ReadConfig.getApplicationURL()
-    username = ReadConfig.getUseremail()
-    password = ReadConfig.getpassword()
-    logger = LogGen.loggen()  # Logger
 
-    @pytest.mark.regression
-    def test_searchCustomerByName(self,setup):
-        self.logger.info("************* SearchCustomerByName_005 **********")
-        self.driver=setup
-        self.driver.get(self.baseURL)
-        self.driver.maximize_window()
+#class LogGen:
+ #   @staticmethod
+ #   def loggen():
+  #      logging.basicConfig(filename=r"C:\Automation_scripts\nopcommerceApp\Logs\logssss.py",
+   #                         format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+    #    logger = logging.getLogger()
+     #   logger.setLevel(logging.INFO)
+      #  return logger
 
-        self.lp = LoginPage(self.driver)
-        self.lp.username = "admin@yourstore.com"  # Set the username attribute using the same instance
-        self.lp.setUserName(self.lp.username)
-        self.lp.setPassword(self.password)
-        self.lp.clickLogin()
-        self.logger.info("************* Login successful **********")
 
-        self.logger.info("******* Starting Search Customer By Name **********")
+import logging
 
-        self.addcust = AddCustomer(self.driver)
-        self.addcust.clickOnCustomersMenu()
-        self.addcust.clickOnCustomersMenuItem()
-        time.sleep(2)
+class LogGen:
+    @staticmethod
+    def loggen():
+        # Creating logger
+        logger = logging.getLogger(__name__)
 
-        self.logger.info("************* searching customer by Name **********")
-        searchcust = SearchCustomer(self.driver)
-        searchcust.setFirstName("Victoria")
-        searchcust.setLastName("Terces")
-        searchcust.clickSearch()
-        time.sleep(10)
-        status=searchcust.searchCustomerByName("Victoria Terces")
-        self.driver.close()
-        assert True==status
-        self.logger.info("***************  TC_SearchCustomerByName_005 Finished  *********** ")
+        # Creating file handler and setting the formatter
+        fileHandler = logging.FileHandler(filename=r"C:\Automation_scripts\nopcommerceApp\Logs\automation.log")
+        formatter = logging.Formatter("%(asctime)s : %(levelname)s : %(name)s : %(message)s")
+        fileHandler.setFormatter(formatter)
 
-print("Hum Kameyab ho gye automation karne mein")
+        # Adding file handler to the logger
+        logger.addHandler(fileHandler)
+
+        # Setting the logging level
+        logger.setLevel(logging.DEBUG)
+
+        return logger
