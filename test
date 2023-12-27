@@ -1,33 +1,29 @@
-import logging
 
 
-#class LogGen:
- #   @staticmethod
- #   def loggen():
-  #      logging.basicConfig(filename=r"C:\Automation_scripts\nopcommerceApp\Logs\logssss.py",
-   #                         format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-    #    logger = logging.getLogger()
-     #   logger.setLevel(logging.INFO)
-      #  return logger
+import configparser
 
 
-import logging
 
-class LogGen:
+config=configparser.RawConfigParser()
+config.read(r"C:\Automation_scripts\nopcommerceApp\Configurations\config.ini")
+
+class ReadConfig:
     @staticmethod
-    def loggen():
-        # Creating logger
-        logger = logging.getLogger(__name__)
+    def getApplicationURL():
+        url=config.get('common info','baseURL')
+        return url
 
-        # Creating file handler and setting the formatter
-        fileHandler = logging.FileHandler(filename=r"C:\Automation_scripts\nopcommerceApp\Logs\automation.log")
-        formatter = logging.Formatter("%(asctime)s : %(levelname)s : %(name)s : %(message)s")
-        fileHandler.setFormatter(formatter)
+    @staticmethod
+    def getusername():
+        username=config.get('common info','username')
+        return username
 
-        # Adding file handler to the logger
-        logger.addHandler(fileHandler)
+    @staticmethod
+    def getpassword():
+        password=config.get('common info','password')
+        return password
 
-        # Setting the logging level
-        logger.setLevel(logging.DEBUG)
+    @classmethod
+    def getUseremail(cls):
+        pass
 
-        return logger
